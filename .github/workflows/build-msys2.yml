@@ -40,8 +40,21 @@ jobs:
             p7zip
             mingw-w64-${{ matrix.env }}-toolchain
             mingw-w64-${{ matrix.env }}-${{ matrix.qtVersion }}
+            mingw-w64-${{ matrix.env }}-libavif
+            mingw-w64-${{ matrix.env }}-libheif
+            mingw-w64-${{ matrix.env }}-libraw
+            mingw-w64-${{ matrix.env }}-libjxl
+            mingw-w64-${{ matrix.env }}-openexr
       - run: git config --global core.autocrlf false
         shell: bash
+      - name: Install kimageformats Qt5
+        if: matrix.qtVersion == 'qt5'
+        run: |
+          pacman -S --noconfirm mingw-w64-${{ matrix.env }}-kimageformats-qt5
+      - name: Install kimageformats Qt6
+        if: matrix.qtVersion == 'qt6' && matrix.sys != 'mingw64'
+        run: |
+          pacman -S --noconfirm mingw-w64-${{ matrix.env }}-kimageformats
       - name: Checkout branch
         uses: actions/checkout@v4
         with:
@@ -73,6 +86,11 @@ jobs:
           cp $MSYSTEM_PREFIX/bin/libcrypto-*.dll ./bin/
           cp $MSYSTEM_PREFIX/bin/libssl-*.dll ./bin/
           ldd ./bin/qView.exe | grep "=> /" | grep ${{matrix.sys}} | awk '{print $3}' | xargs -I '{}' cp -v '{}' ./bin/
+      - name: Deploy - kimageformats dependency
+        run: |
+          for i in $(find ./bin/imageformats -name 'kimg*'); do
+            ldd $i | grep "=> /" | grep $MSYSTEM_PREFIX | awk '{print $3}' | xargs -I '{}' cp -v '{}' ./bin/
+          done
       - name: Deploy - strip
         run: |
           find ./bin/ -name '*.dll' -exec strip {} \;
