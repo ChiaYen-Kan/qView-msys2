@@ -1,0 +1,90 @@
+name: Build with msys2 on windows
+
+on:
+  push:
+    paths-ignore:
+      - '.github/**'
+      - 'README.md'
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-2022
+    defaults:
+      run:
+        shell: msys2 {0}
+    strategy:
+      # fail-fast: true
+      # max-parallel: 2
+      matrix:
+        sys: [mingw64, ucrt64, clang64]
+        qtVersion: [qt5, qt6]
+        include:
+        - sys: mingw64
+          env: x86_64
+        - sys: ucrt64
+          env: ucrt-x86_64
+        - sys: clang64
+          env: clang-x86_64
+    steps:
+      - name: Install toolchain and libraries
+        uses: msys2/setup-msys2@v2
+        with:
+          msystem: ${{ matrix.sys }}
+          update: true
+          install: >-
+            git
+            make
+            p7zip
+            mingw-w64-${{ matrix.env }}-toolchain
+            mingw-w64-${{ matrix.env }}-${{ matrix.qtVersion }}
+      - run: git config --global core.autocrlf false
+        shell: bash
+      - name: Checkout branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Configure
+        run: |
+          if [ "${{ matrix.qtVersion }}" == "qt5" ]; then
+            qmake
+          fi
+
+          if [ "${{ matrix.qtVersion }}" == "qt6" ]; then
+            qmake6
+            sed 's/lrelease.exe/lrelease-qt6.exe/g' -i Makefile
+          fi
+
+          sed 's/windres -i/windres --codepage=65001 -i/g' -i Makefile
+      - name: Build
+        run: make -j$(grep -c ^processor /proc/cpuinfo)
+      - name: Deploy - Qt
+        run: |
+          if [ "${{ matrix.qtVersion }}" == "qt5" ]; then
+            windeployqt --no-opengl-sw --no-angle --no-system-d3d-compiler --force ./bin/qView.exe
+          fi
+          if [ "${{ matrix.qtVersion }}" == "qt6" ]; then
+            windeployqt6 --no-opengl-sw --force ./bin/qView.exe
+          fi
+      - name: Deploy - mingw
+        run: |
+          cp $MSYSTEM_PREFIX/bin/libcrypto-*.dll ./bin/
+          cp $MSYSTEM_PREFIX/bin/libssl-*.dll ./bin/
+          ldd ./bin/qView.exe | grep "=> /" | grep ${{matrix.sys}} | awk '{print $3}' | xargs -I '{}' cp -v '{}' ./bin/
+      - name: Deploy - strip
+        run: |
+          find ./bin/ -name '*.dll' -exec strip {} \;
+          find ./bin/ -name '*.exe' -exec strip {} \;
+      - name: Deploy - create file name
+        run: |
+          echo "filename=qView-gcc-${{matrix.env}}-${{ matrix.qtVersion }}-$(date +"%Y%m%d_%H%M%S")" >> $GITHUB_ENV
+      - name: Deploy - 7z archive
+        run: |
+          7z a -mx=9 ${{ env.filename }}.7z ./bin/*
+      - name: Upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.filename }}.7z
+          path: ${{ env.filename }}.7z
