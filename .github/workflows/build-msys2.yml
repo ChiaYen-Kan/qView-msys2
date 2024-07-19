@@ -97,7 +97,7 @@ jobs:
           find ./bin/ -name '*.exe' -exec strip {} \;
       - name: Deploy - create file name
         run: |
-          echo "filename=qView-gcc-${{matrix.env}}-${{ matrix.qtVersion }}-$(date +"%Y%m%d_%H%M%S")" >> $GITHUB_ENV
+          echo "filename=qView-${{matrix.env}}-${{ matrix.qtVersion }}-$(date +"%Y%m%d_%H%M%S")" >> $GITHUB_ENV
       - name: Deploy - 7z archive
         run: |
           7z a -mx=9 ${{ env.filename }}.7z ./bin/*
