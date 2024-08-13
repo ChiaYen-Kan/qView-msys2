@@ -5,6 +5,7 @@
 #include <QLocale>
 #include <QCoreApplication>
 #include <QDir>
+#include <QLibraryInfo>
 
 #include <QDebug>
 
@@ -58,6 +59,14 @@ bool SettingsManager::loadTranslation() const
         qInfo() << "Loaded translation" << lang;
         QCoreApplication::installTranslator(translator);
     }
+
+    QTranslator *qtTranslator = new QTranslator();
+    success = qtTranslator->load(QCoreApplication::applicationDirPath() + "/translations" + "/qt_" + lang);
+    if (success)
+    {
+        QCoreApplication::installTranslator(qtTranslator);
+    }
+
     return success;
 }
 
