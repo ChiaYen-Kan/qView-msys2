@@ -86,11 +86,10 @@ jobs:
           cp $MSYSTEM_PREFIX/bin/libcrypto-*.dll ./bin/
           cp $MSYSTEM_PREFIX/bin/libssl-*.dll ./bin/
           ldd ./bin/qView.exe | grep "=> /" | grep ${{matrix.sys}} | awk '{print $3}' | xargs -I '{}' cp -v '{}' ./bin/
-      - name: Deploy - kimageformats dependency
+      - name: Deploy - imageformats dependency
         run: |
-          for i in $(find ./bin/imageformats -name 'kimg*'); do
-            ldd $i | grep "=> /" | grep $MSYSTEM_PREFIX | awk '{print $3}' | xargs -I '{}' cp -v '{}' ./bin/
-          done
+          cd ./bin/
+          find ./imageformats/ -name "*.dll" -exec ldd {} \; | grep "=> /" | grep ${{matrix.sys}} | awk '{print $3}' | xargs -I '{}' cp -v '{}' ./
       - name: Deploy - strip
         run: |
           find ./bin/ -name '*.dll' -exec strip {} \;
