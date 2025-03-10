@@ -11,32 +11,32 @@
     <message>
         <location filename="../src/actionmanager.cpp" line="183"/>
         <source>&amp;File</source>
-        <translation>&amp;檔案</translation>
+        <translation>檔案</translation>
     </message>
     <message>
         <location filename="../src/actionmanager.cpp" line="211"/>
         <source>&amp;Edit</source>
-        <translation>&amp;編輯</translation>
+        <translation>編輯</translation>
     </message>
     <message>
         <location filename="../src/actionmanager.cpp" line="229"/>
         <source>&amp;Go</source>
-        <translation>&amp;前往</translation>
+        <translation>前往</translation>
     </message>
     <message>
         <location filename="../src/actionmanager.cpp" line="258"/>
         <source>&amp;View</source>
-        <translation>&amp;檢視</translation>
+        <translation>檢視</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="282"/>
+        <location filename="../src/actionmanager.cpp" line="276"/>
         <source>&amp;Tools</source>
-        <translation>&amp;工具</translation>
+        <translation>工具</translation>
     </message>
     <message>
         <location filename="../src/actionmanager.cpp" line="304"/>
         <source>&amp;Help</source>
-        <translation>&amp;說明</translation>
+        <translation>說明</translation>
     </message>
     <message>
         <location filename="../src/actionmanager.cpp" line="318"/>
@@ -58,7 +58,7 @@
     <message>
         <location filename="../src/actionmanager.cpp" line="650"/>
         <source>&amp;Quit</source>
-        <translation>&amp;離開</translation>
+        <translation>離開</translation>
     </message>
     <message>
         <location filename="../src/actionmanager.cpp" line="654"/>
@@ -74,7 +74,7 @@
     <message>
         <location filename="../src/actionmanager.cpp" line="660"/>
         <source>&amp;Open...</source>
-        <translation>&amp;開啟…</translation>
+        <translation>開啟…</translation>
     </message>
     <message>
         <location filename="../src/actionmanager.cpp" line="663"/>
@@ -101,13 +101,13 @@
         <location filename="../src/actionmanager.cpp" line="676"/>
         <source>Show in E&amp;xplorer</source>
         <extracomment>Open containing folder on windows</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>在檔案總管中顯示</translation>
     </message>
     <message>
         <location filename="../src/actionmanager.cpp" line="679"/>
         <source>Show in &amp;Finder</source>
         <extracomment>Open containing folder on macOS</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>在 Finder 中顯示</translation>
     </message>
     <message>
         <location filename="../src/actionmanager.cpp" line="684"/>
@@ -122,7 +122,7 @@
     <message>
         <location filename="../src/actionmanager.cpp" line="690"/>
         <source>&amp;Delete</source>
-        <translation>&amp;刪除</translation>
+        <translation>刪除</translation>
     </message>
     <message>
         <location filename="../src/actionmanager.cpp" line="695"/>
@@ -137,12 +137,12 @@
     <message>
         <location filename="../src/actionmanager.cpp" line="702"/>
         <source>&amp;Copy</source>
-        <translation>&amp;複寫</translation>
+        <translation>複製</translation>
     </message>
     <message>
         <location filename="../src/actionmanager.cpp" line="706"/>
         <source>&amp;Paste</source>
-        <translation>&amp;貼上</translation>
+        <translation>貼上</translation>
     </message>
     <message>
         <location filename="../src/actionmanager.cpp" line="709"/>
@@ -182,12 +182,12 @@
     <message>
         <location filename="../src/actionmanager.cpp" line="737"/>
         <source>&amp;Mirror</source>
-        <translation>&amp;鏡射</translation>
+        <translation>鏡射</translation>
     </message>
     <message>
         <location filename="../src/actionmanager.cpp" line="741"/>
         <source>&amp;Flip</source>
-        <translation>&amp;翻轉</translation>
+        <translation>翻轉</translation>
     </message>
     <message>
         <location filename="../src/actionmanager.cpp" line="745"/>
@@ -227,17 +227,17 @@
     <message>
         <location filename="../src/actionmanager.cpp" line="773"/>
         <source>&amp;Next Frame</source>
-        <translation>&amp;下一幅</translation>
+        <translation>下一幅</translation>
     </message>
     <message>
         <location filename="../src/actionmanager.cpp" line="777"/>
         <source>&amp;Decrease Speed</source>
-        <translation>&amp;減慢速度</translation>
+        <translation>減慢速度</translation>
     </message>
     <message>
         <location filename="../src/actionmanager.cpp" line="781"/>
         <source>&amp;Reset Speed</source>
-        <translation>&amp;重置速度</translation>
+        <translation>重置速度</translation>
     </message>
     <message>
         <location filename="../src/actionmanager.cpp" line="785"/>
@@ -638,7 +638,7 @@ No write permission or file is read-only.</source>
     <message>
         <location filename="../src/qvinfodialog.cpp" line="49"/>
         <source>%1 (%2 bytes)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 (%2 位元組)</translation>
     </message>
     <message>
         <location filename="../src/qvinfodialog.cpp" line="51"/>
@@ -656,7 +656,7 @@ No write permission or file is read-only.</source>
     <message>
         <location filename="../src/openwith.h" line="66"/>
         <source>Development</source>
-        <translation>發展</translation>
+        <translation>開發</translation>
     </message>
     <message>
         <location filename="../src/openwith.h" line="67"/>
@@ -744,22 +744,22 @@ No write permission or file is read-only.</source>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="66"/>
         <source>&amp;Basic</source>
-        <translation>&amp;基本</translation>
+        <translation>基本</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="73"/>
         <source>&amp;Minimal</source>
-        <translation>&amp;極簡</translation>
+        <translation>極簡</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="83"/>
         <source>&amp;Practical</source>
-        <translation>&amp;適用</translation>
+        <translation>適用</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="90"/>
         <source>&amp;Verbose</source>
-        <translation>&amp;詳細</translation>
+        <translation>詳細</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="110"/>
@@ -969,7 +969,7 @@ No write permission or file is read-only.</source>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="474"/>
         <source>Last Modified</source>
-        <translation>上次修改</translation>
+        <translation>最後修改</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="479"/>
@@ -1030,7 +1030,7 @@ No write permission or file is read-only.</source>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="565"/>
         <source>&amp;Loop through folders</source>
-        <translation>&amp;資料夾內循環</translation>
+        <translation>資料夾內循環</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="588"/>
@@ -1060,13 +1060,13 @@ No write permission or file is read-only.</source>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="648"/>
         <source>Save &amp;recent files</source>
-        <translation type="unfinished"></translation>
+        <translation>儲存最近使用的檔案</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="655"/>
         <source>&amp;Update notifications on startup</source>
         <extracomment>The notifications are for new qView releases</extracomment>
-        <translation>&amp;啟動時的更新通知</translation>
+        <translation>啟動時的更新通知</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="451"/>
@@ -1096,13 +1096,13 @@ No write permission or file is read-only.</source>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="691"/>
         <source>&amp;Ask before deleting files</source>
-        <translation>&amp;刪除檔案前先詢問</translation>
+        <translation>刪除檔案前先詢問</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="712"/>
         <location filename="../src/qvoptionsdialog.ui" line="760"/>
         <source>Shortcuts</source>
-        <translation>捷徑</translation>
+        <translation>快捷鍵</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="755"/>
@@ -1187,7 +1187,7 @@ No write permission or file is read-only.</source>
     <message>
         <location filename="../src/qvwelcomedialog.ui" line="472"/>
         <source>&amp;Enable update notifications on startup</source>
-        <translation>&amp;啟動時啟用更新通知</translation>
+        <translation>啟用啟動時的更新通知</translation>
     </message>
     <message>
         <location filename="../src/qvwelcomedialog.cpp" line="42"/>
@@ -1220,12 +1220,12 @@ No write permission or file is read-only.</source>
     <message>
         <location filename="../src/shortcutmanager.cpp" line="50"/>
         <source>Show in Explorer</source>
-        <translation>在資源管理器裡顯示</translation>
+        <translation>在檔案總管中顯示</translation>
     </message>
     <message>
         <location filename="../src/shortcutmanager.cpp" line="52"/>
         <source>Show in Finder</source>
-        <translation>在觀景器中顯示</translation>
+        <translation>在 Finder 中顯示</translation>
     </message>
     <message>
         <location filename="../src/shortcutmanager.cpp" line="54"/>
@@ -1235,7 +1235,7 @@ No write permission or file is read-only.</source>
     <message>
         <location filename="../src/shortcutmanager.cpp" line="55"/>
         <source>Restore from Trash</source>
-        <translation>從垃圾箱恢復</translation>
+        <translation>從資源回收統中還原</translation>
     </message>
     <message>
         <location filename="../src/shortcutmanager.cpp" line="57"/>
@@ -1423,7 +1423,7 @@ No write permission or file is read-only.</source>
     <message>
         <location filename="../src/updatechecker.cpp" line="77"/>
         <source>&amp;Disable Update Checking</source>
-        <translation>&amp;關閉更新檢查</translation>
+        <translation>關閉更新檢查</translation>
     </message>
     <message>
         <location filename="../src/updatechecker.cpp" line="87"/>
