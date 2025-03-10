@@ -675,7 +675,7 @@ No write permission or file is read-only.</source>
     <message>
         <location filename="../src/openwith.h" line="67"/>
         <source>Development</source>
-        <translation>發展</translation>
+        <translation>開發</translation>
     </message>
     <message>
         <location filename="../src/openwith.h" line="68"/>
@@ -1006,7 +1006,7 @@ No write permission or file is read-only.</source>
     </message>
     <message>
         <source>Last Modified</source>
-        <translation type="vanished">上次修改</translation>
+        <translation>最後修改</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="534"/>
@@ -1123,7 +1123,7 @@ No write permission or file is read-only.</source>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="713"/>
         <source>Save &amp;recent files</source>
-        <translation>儲存最近的檔案(&amp;R)</translation>
+        <translation>儲存最近使用的檔案(&amp;R)</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="720"/>
@@ -1176,7 +1176,7 @@ No write permission or file is read-only.</source>
         <location filename="../src/qvoptionsdialog.ui" line="787"/>
         <location filename="../src/qvoptionsdialog.ui" line="835"/>
         <source>Shortcuts</source>
-        <translation>捷徑</translation>
+        <translation>快捷鍵</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="830"/>
