@@ -33,7 +33,7 @@ if(Qt6_FOUND)
     set(QT_VERSION_MAJOR 6)
     set(QT_VERSION ${Qt6_VERSION})
     # Find optional tools
-    find_package(Qt6 QUIET COMPONENTS LinguistTools)
+    find_package(Qt6 QUIET COMPONENTS REQUIRED LinguistTools)
 else()
     set(QT5_FIND_COMPONENTS Core Gui Network Widgets Svg)
     if(UNIX AND NOT APPLE)
@@ -43,7 +43,7 @@ else()
     set(QT_VERSION_MAJOR 5)
     set(QT_VERSION ${Qt5_VERSION})
     # Find optional tools
-    find_package(Qt5 QUIET COMPONENTS LinguistTools)
+    find_package(Qt5 QUIET COMPONENTS REQUIRED LinguistTools)
 endif()
 
 # Source files
@@ -221,7 +221,7 @@ if(DEFINED NIGHTLY)
 endif()
 
 # Handle translations
-if(Qt${QT_VERSION_MAJOR}_LinguistTools_FOUND)
+if(Qt${QT_VERSION_MAJOR}LinguistTools_FOUND)
     message(STATUS "LinguistTools found, building translations.")
     file(GLOB TRANSLATIONS "i18n/qview_*.ts")
     if(QT_VERSION_MAJOR EQUAL 5)

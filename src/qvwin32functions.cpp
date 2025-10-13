@@ -1,6 +1,8 @@
 #include "qvwin32functions.h"
 
-#include "ShlObj_core.h"
+#include "shobjidl.h"
+#include "shlguid.h"
+#include "shlobj.h"
 #include "winuser.h"
 #include "wingdi.h"
 #include "Objbase.h"
