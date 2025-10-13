@@ -1,0 +1,100 @@
+name: Build with msys2 on windows
+
+on:
+  push:
+    paths-ignore:
+      - '.github/**'
+      - 'README.md'
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-2022
+    defaults:
+      run:
+        shell: msys2 {0}
+    strategy:
+      # fail-fast: true
+      # max-parallel: 2
+      matrix:
+        sys: [mingw64, ucrt64, clang64]
+        qtVersion: [qt5, qt6]
+        include:
+        - sys: mingw64
+          env: x86_64
+        - sys: ucrt64
+          env: ucrt-x86_64
+        - sys: clang64
+          env: clang-x86_64
+    steps:
+      - name: Install toolchain and libraries
+        uses: msys2/setup-msys2@v2
+        with:
+          msystem: ${{ matrix.sys }}
+          update: true
+          install: >-
+            git
+            make
+            p7zip
+            mingw-w64-${{ matrix.env }}-toolchain
+            mingw-w64-${{ matrix.env }}-${{ matrix.qtVersion }}
+            mingw-w64-${{ matrix.env }}-libavif
+            mingw-w64-${{ matrix.env }}-libheif
+            mingw-w64-${{ matrix.env }}-libraw
+            mingw-w64-${{ matrix.env }}-libjxl
+            mingw-w64-${{ matrix.env }}-openexr
+            mingw-w64-${{ matrix.env }}-cmake
+      - run: git config --global core.autocrlf false
+        shell: bash
+      - name: Install kimageformats Qt6
+        if: matrix.qtVersion == 'qt6' && matrix.sys != 'mingw64'
+        run: |
+          pacman -S --noconfirm mingw-w64-${{ matrix.env }}-kimageformats
+      - name: Checkout branch
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - name: Configure
+        run: |
+          cmake -B build
+      - name: Build
+        run: cmake --build build --parallel
+      - name: Deploy - Copy file
+        run: |
+          mkdir bin
+          cp build/qView.exe ./bin/
+          cp build/*.qm ./bin/
+      - name: Deploy - Qt
+        run: |
+          if [ "${{ matrix.qtVersion }}" == "qt5" ]; then
+            windeployqt-qt5 --no-opengl-sw --no-angle --no-system-d3d-compiler --force ./bin/qView.exe
+          fi
+          if [ "${{ matrix.qtVersion }}" == "qt6" ]; then
+            windeployqt --no-opengl-sw --force ./bin/qView.exe
+          fi
+      - name: Deploy - mingw
+        run: |
+          cp $MSYSTEM_PREFIX/bin/libcrypto-*.dll ./bin/
+          cp $MSYSTEM_PREFIX/bin/libssl-*.dll ./bin/
+          ldd ./bin/qView.exe | grep "=> /" | grep ${{matrix.sys}} | awk '{print $3}' | xargs -I '{}' cp -v '{}' ./bin/
+      - name: Deploy - imageformats dependency
+        run: |
+          cd ./bin/
+          find ./imageformats/ -name "*.dll" -exec ldd {} \; | grep "=> /" | grep ${{matrix.sys}} | awk '{print $3}' | xargs -I '{}' cp -v '{}' ./
+      - name: Deploy - strip
+        run: |
+          find ./bin/ -name '*.dll' -exec strip {} \;
+          find ./bin/ -name '*.exe' -exec strip {} \;
+      - name: Deploy - create file name
+        run: |
+          echo "filename=qView-${{matrix.env}}-${{ matrix.qtVersion }}-$(date +"%Y%m%d_%H%M%S")" >> $GITHUB_ENV
+      - name: Deploy - 7z archive
+        run: |
+          7z a -mx=9 ${{ env.filename }}.7z ./bin/*
+      - name: Upload
+        uses: actions/upload-artifact@v6
+        with:
+          name: ${{ env.filename }}.7z
+          path: ${{ env.filename }}.7z
