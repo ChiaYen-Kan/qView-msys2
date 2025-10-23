@@ -815,12 +815,12 @@ Puuduvad kirjutamise õigused või fail on vaid lugemisõigustega.</translation>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="219"/>
         <source>Choose whether or not the titlebar should always be dark regardless of your chosen macOS appearance</source>
-        <translation type="unfinished"></translation>
+        <translation>Vali kas pealkirjariba peaks sõltumata macOS-i välimusest alati olema tumedat värv</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="222"/>
         <source>&amp;Titlebar always dark</source>
-        <translation type="unfinished"></translation>
+        <translation>Pealkirjariba on alati &amp;tume</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="232"/>
@@ -850,17 +850,17 @@ Puuduvad kirjutamise õigused või fail on vaid lugemisõigustega.</translation>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="263"/>
         <source>Scaling:</source>
-        <translation type="unfinished"></translation>
+        <translation>Skaleerimine:</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="270"/>
         <source>Turn this off to see individual pixels</source>
-        <translation type="unfinished"></translation>
+        <translation>Üksikute pikslite nägemiseks lülita see valik välja</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="273"/>
         <source>&amp;Bilinear filtering</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Kahesuunaline filtreerimine</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="283"/>
@@ -922,22 +922,22 @@ Puuduvad kirjutamise õigused või fail on vaid lugemisõigustega.</translation>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="390"/>
         <source>Fit whole image</source>
-        <translation type="unfinished"></translation>
+        <translation>Sobita kogu pilt</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="395"/>
         <source>Fit height</source>
-        <translation type="unfinished"></translation>
+        <translation>Sobita kõrgusele</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="400"/>
         <source>Fit width</source>
-        <translation type="unfinished"></translation>
+        <translation>Sobita laiusele</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="411"/>
         <source>On window resize:</source>
-        <translation type="unfinished"></translation>
+        <translation>Akna suuruse muutmisel:</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="431"/>
@@ -947,32 +947,32 @@ Puuduvad kirjutamise õigused või fail on vaid lugemisõigustega.</translation>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="434"/>
         <source>Zoom &amp;towards cursor</source>
-        <translation type="unfinished"></translation>
+        <translation>Suumi kursori &amp;suunas</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="457"/>
         <source>Color space conversion:</source>
-        <translation type="unfinished"></translation>
+        <translation>Värvituumi teisendamine:</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="476"/>
         <source>Auto-detect</source>
-        <translation type="unfinished"></translation>
+        <translation>Tuvasta automaatselt</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="481"/>
         <source>sRGB</source>
-        <translation type="unfinished"></translation>
+        <translation>sRGB</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="486"/>
         <source>Display P3</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuvar P3</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="495"/>
         <source>Miscellaneous</source>
-        <translation type="unfinished"></translation>
+        <translation>Varia</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="511"/>
@@ -1013,33 +1013,33 @@ Puuduvad kirjutamise õigused või fail on vaid lugemisõigustega.</translation>
         <location filename="../src/qvoptionsdialog.ui" line="582"/>
         <location filename="../src/qvoptionsdialog.ui" line="592"/>
         <source>Controls the amount of images preloaded</source>
-        <translation type="unfinished"></translation>
+        <translation>Eellaaditavate piltide arv</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="585"/>
         <source>Preloading:</source>
-        <translation type="unfinished"></translation>
+        <translation>Eellaadimine:</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="471"/>
         <location filename="../src/qvoptionsdialog.ui" line="599"/>
         <source>Disabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Pole kasutusel</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="17"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Seadistused</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="524"/>
         <source>Date Modified</source>
-        <translation type="unfinished"></translation>
+        <translation>Muutmise kuupäev</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="529"/>
         <source>Date Created</source>
-        <translation type="unfinished"></translation>
+        <translation>Loomiskuupäev</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="604"/>
@@ -1064,27 +1064,27 @@ Puuduvad kirjutamise õigused või fail on vaid lugemisõigustega.</translation>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="643"/>
         <source>Slideshow direction:</source>
-        <translation type="unfinished"></translation>
+        <translation>Slaidiesitluse suund:</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="651"/>
         <source>Forward</source>
-        <translation type="unfinished"></translation>
+        <translation>Edasi</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="656"/>
         <source>Backward</source>
-        <translation type="unfinished"></translation>
+        <translation>Tagasi</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="664"/>
         <source>Slideshow timer:</source>
-        <translation type="unfinished"></translation>
+        <translation>Slaidiesitluse taimer:</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="671"/>
         <source> sec</source>
-        <translation type="unfinished"></translation>
+        <translation> sek</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="703"/>
@@ -1105,74 +1105,74 @@ Puuduvad kirjutamise õigused või fail on vaid lugemisõigustega.</translation>
         <location filename="../src/qvoptionsdialog.ui" line="720"/>
         <source>&amp;Update notifications on startup</source>
         <extracomment>The notifications are for new qView releases</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Uuenduste teavitused käivitamisel</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="501"/>
         <source>Language:</source>
-        <translation type="unfinished"></translation>
+        <translation>Keel:</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="727"/>
         <source>Skip hidden files when browsing to the next/previous file</source>
-        <translation type="unfinished"></translation>
+        <translation>Eelmise/järgmise faili suunas liikumisel jäta peidetud failid vahele</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="730"/>
         <source>Skip hidden files</source>
         <extracomment>Don&apos;t view files with &apos;hidden&apos; attribute</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Jäta peidetud failid vahele</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="741"/>
         <source>Move Back</source>
-        <translation type="unfinished"></translation>
+        <translation>Liigu tagasi</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="746"/>
         <source>Do Nothing</source>
-        <translation type="unfinished"></translation>
+        <translation>Ära tee midagi</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="751"/>
         <source>Move Forward</source>
-        <translation type="unfinished"></translation>
+        <translation>Liigu edasi</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="759"/>
         <source>After deletion:</source>
-        <translation type="unfinished"></translation>
+        <translation>Peale kustutamist:</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="766"/>
         <source>&amp;Ask before deleting files</source>
-        <translation type="unfinished"></translation>
+        <translation>Küsi enne f&amp;ailide kustutamist</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="787"/>
         <location filename="../src/qvoptionsdialog.ui" line="835"/>
         <source>Shortcuts</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiirklahvid</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="830"/>
         <source>Action</source>
-        <translation type="unfinished"></translation>
+        <translation>Tegevus</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.cpp" line="459"/>
         <source>System Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Süsteemi keel</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.cpp" line="483"/>
         <source>Restart Required</source>
-        <translation type="unfinished"></translation>
+        <translation>Taaskäivitamine on vajalik</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.cpp" line="483"/>
         <source>You must restart qView to change the language.</source>
-        <translation type="unfinished"></translation>
+        <translation>Keele vahetamiseks pead qView uuesti käivitama.</translation>
     </message>
 </context>
 <context>
@@ -1197,13 +1197,15 @@ Puuduvad kirjutamise õigused või fail on vaid lugemisõigustega.</translation>
         <location filename="../src/qvrenamedialog.cpp" line="26"/>
         <source>Could not rename %1:
 No write permission or file is read-only.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 nime muutmine ei õnnestu:
+Kas pole kirjutusõigust või fail on vaid lugemisõigustes.</translation>
     </message>
     <message>
         <location filename="../src/qvrenamedialog.cpp" line="45"/>
         <source>Could not rename %1:
 (Check that all characters are valid)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 nime muutmine ei õnnestu:
+(Kontrolli, et kasutad luvatud tähemärke)</translation>
     </message>
 </context>
 <context>
@@ -1211,17 +1213,17 @@ No write permission or file is read-only.</source>
     <message>
         <location filename="../src/qvshortcutdialog.ui" line="14"/>
         <source>Modify Shortcuts</source>
-        <translation type="unfinished"></translation>
+        <translation>Muuda kiirklahve</translation>
     </message>
     <message>
         <location filename="../src/qvshortcutdialog.cpp" line="57"/>
         <source>Shortcut Already Used</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiirklahv on juba kasutusel</translation>
     </message>
     <message>
         <location filename="../src/qvshortcutdialog.cpp" line="57"/>
         <source>&quot;%1&quot; is already bound to &quot;%2&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Klahv on juba seotud: „%1“ → „%2“</translation>
     </message>
 </context>
 <context>
@@ -1230,12 +1232,12 @@ No write permission or file is read-only.</source>
         <location filename="../src/qvwelcomedialog.ui" line="14"/>
         <location filename="../src/qvwelcomedialog.ui" line="155"/>
         <source>Welcome</source>
-        <translation type="unfinished"></translation>
+        <translation>Tere tulemast</translation>
     </message>
     <message>
         <location filename="../src/qvwelcomedialog.ui" line="472"/>
         <source>&amp;Enable update notifications on startup</source>
-        <translation type="unfinished"></translation>
+        <translation>Käivitamisel kuva teavitusi uu&amp;enduste kohta</translation>
     </message>
     <message>
         <location filename="../src/qvwelcomedialog.cpp" line="42"/>
