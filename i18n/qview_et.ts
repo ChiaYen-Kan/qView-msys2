@@ -1223,7 +1223,7 @@ Kas pole kirjutusõigust või fail on vaid lugemisõigustes.</translation>
     <message>
         <location filename="../src/qvshortcutdialog.cpp" line="57"/>
         <source>&quot;%1&quot; is already bound to &quot;%2&quot;</source>
-        <translation>Klahv on juba seotud: „%1“ → „%2“</translation>
+        <translation type="unfinished">Klahv on juba seotud: „%1“ → „%2“</translation>
     </message>
 </context>
 <context>
