@@ -1018,7 +1018,7 @@ Puuduvad kirjutamise õigused või fail on vaid lugemisõigustega.</translation>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="585"/>
         <source>Preloading:</source>
-        <translation>Eellaadimine:</translation>
+        <translation type="unfinished">Eellaadimine:</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="471"/>
