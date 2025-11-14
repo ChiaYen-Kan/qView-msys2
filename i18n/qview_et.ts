@@ -865,59 +865,59 @@ Puuduvad kirjutamise õigused või fail on vaid lugemisõigustega.</translation>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="283"/>
         <source>Images appear aliased (having jagged edges) without this, but it is faster</source>
-        <translation type="unfinished"></translation>
+        <translation>Ilma selleta võib piltidele tekkida diskreetmoonutuse efekt (sakilised ääred), kuid see toimib kiiremini</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="286"/>
         <source>&amp;Image scaling</source>
-        <translation type="unfinished"></translation>
+        <translation>P&amp;iltide skaleerimine</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="296"/>
         <source>Choose whether or not the image continues to be scaled when zooming above the window size (can be laggier with large images)</source>
-        <translation type="unfinished"></translation>
+        <translation>Saad valida, kas piltide suurendamine jätkub ka suumimisel väljaspoole akna mõõte (suuremate piltide puhul võib toimida uimaselt)</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="299"/>
         <source>&amp;Scaling above window size</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Skaleerimine üle akna mõõdu</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="309"/>
         <location filename="../src/qvoptionsdialog.ui" line="319"/>
         <source>The amount to zoom every scroll wheel click</source>
-        <translation type="unfinished"></translation>
+        <translation>Iga hiireratta klõpsuga kaasnev suumisamm</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="312"/>
         <source>Zoom amount:</source>
-        <translation type="unfinished"></translation>
+        <translation>Suumisamm:</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="341"/>
         <source>Choose whether scrolling zooms or moves the image (alternative can be accessed at any time by holding ctrl/cmd)</source>
-        <translation type="unfinished"></translation>
+        <translation>Vali, kas hiireratta kerimine suumib või liigutab pilti (see teine toiming töötab sel puhul ctrl/cmd klahvi kerimisel all hoides)</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="344"/>
         <source>Scrolling &amp;zooms</source>
-        <translation type="unfinished"></translation>
+        <translation>Hiireratta kerimine &amp;suumib</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="367"/>
         <source>Stop the image from going past its actual size when resizing the window - you can still zoom past it though</source>
-        <translation type="unfinished"></translation>
+        <translation>Akna suuruse muutmisel väldi pildi suuruse muutmist üle tegelike mõõtude (suumides saad seda ikka teha)</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="370"/>
         <source>Image resizes &amp;past actual size</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Pilti saab suumida kaugemale tegelikust suurusest</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="386"/>
         <location filename="../src/qvoptionsdialog.ui" line="408"/>
         <source>Ignores select sides of an image when fitting to window (some sides will extend beyond the window boundaries)</source>
-        <translation type="unfinished"></translation>
+        <translation>Eirab pildi valitud külgi aknasse sobitamisel (mõned küljed jäävad akna äärte taha)</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="390"/>
@@ -942,7 +942,7 @@ Puuduvad kirjutamise õigused või fail on vaid lugemisõigustega.</translation>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="431"/>
         <source>Choose whether or not zooming in and out above 100% zoom will zoom towards the cursor</source>
-        <translation type="unfinished"></translation>
+        <translation>Saad valida, kas sisse/välja suumimisel sajast protsendist suuremas alas suumitakse kursori suunas või mitte</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="434"/>
@@ -1018,7 +1018,7 @@ Puuduvad kirjutamise õigused või fail on vaid lugemisõigustega.</translation>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="585"/>
         <source>Preloading:</source>
-        <translation type="unfinished">Eellaadimine:</translation>
+        <translation>Eellaadimine:</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="471"/>
@@ -1044,22 +1044,22 @@ Puuduvad kirjutamise õigused või fail on vaid lugemisõigustega.</translation>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="604"/>
         <source>Adjacent</source>
-        <translation type="unfinished"></translation>
+        <translation>Külgnevalt</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="609"/>
         <source>Extended</source>
-        <translation type="unfinished"></translation>
+        <translation>Laiendatult</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="617"/>
         <source>Controls whether or not qView should go back to the first item after reaching the end of a folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Selle eelistusega saad määrata, kas qView läheb kausta lõppu jõudes tagasi esimese faili juurde</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="620"/>
         <source>&amp;Loop through folders</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Lappa läbi kaustade</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="643"/>
@@ -1089,17 +1089,17 @@ Puuduvad kirjutamise õigused või fail on vaid lugemisõigustega.</translation>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="703"/>
         <source>Detect supported files in folder even if extension isn&apos;t recognized (may be slow with larger/network folders)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tuvasta kaustas asuvad failid ka siis, kui faililaiend on tundmatu (suurte ja võrgukaustade puhul aeglustab tööd)</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="706"/>
         <source>Allow &amp;MIME content detection</source>
-        <translation type="unfinished"></translation>
+        <translation>Kasuta failide &amp;MIME-tüübi tuvastamist</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="713"/>
         <source>Save &amp;recent files</source>
-        <translation type="unfinished"></translation>
+        <translation>Salvesta &amp;hiljutised failid</translation>
     </message>
     <message>
         <location filename="../src/qvoptionsdialog.ui" line="720"/>
