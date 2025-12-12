@@ -231,7 +231,7 @@
     <message>
         <location filename="../src/actionmanager.cpp" line="787"/>
         <source>Pa&amp;use</source>
-        <translation>Pausa</translation>
+        <translation>Pa&amp;usa</translation>
     </message>
     <message>
         <location filename="../src/actionmanager.cpp" line="791"/>
@@ -278,7 +278,7 @@
         <location filename="../src/actionmanager.cpp" line="816"/>
         <source>Preference&amp;s...</source>
         <extracomment>This is for the options dialog on older mac versions</extracomment>
-        <translation>Impostazioni</translation>
+        <translation>Impostazion&amp;i...</translation>
     </message>
     <message>
         <location filename="../src/actionmanager.cpp" line="818"/>
@@ -1300,7 +1300,7 @@ Nessun permesso di scrittura o il file è di sola lettura.</translation>
     <message>
         <location filename="../src/shortcutmanager.cpp" line="47"/>
         <source>Reload File</source>
-        <translation type="unfinished"></translation>
+        <translation>Ricarica File</translation>
     </message>
     <message>
         <location filename="../src/shortcutmanager.cpp" line="48"/>
@@ -1465,7 +1465,7 @@ Nessun permesso di scrittura o il file è di sola lettura.</translation>
     <message>
         <location filename="../src/shortcutmanager.cpp" line="115"/>
         <source>Settings</source>
-        <translation type="unfinished">Impostazioni</translation>
+        <translation>Impostazioni</translation>
     </message>
     <message>
         <source>Options</source>
