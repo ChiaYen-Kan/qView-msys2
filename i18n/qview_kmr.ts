@@ -355,7 +355,7 @@
         <location filename="../src/mainwindow.cpp" line="573"/>
         <location filename="../src/mainwindow.cpp" line="629"/>
         <source>Open URL...</source>
-        <translation>Girêdan veke...</translation>
+        <translation>Girêdanê veke...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="590"/>
@@ -1131,7 +1131,7 @@ Mafdayîna nivîsandinê tune ye an jî pel tenê ji bo xwendinê ye.</translati
     <message>
         <location filename="../src/qvrenamedialog.cpp" line="14"/>
         <source>Rename...</source>
-        <translation>Ji nû ve bi nav bike...</translation>
+        <translation>Navê biguherîne...</translation>
     </message>
     <message>
         <location filename="../src/qvrenamedialog.cpp" line="15"/>
@@ -1148,14 +1148,14 @@ Mafdayîna nivîsandinê tune ye an jî pel tenê ji bo xwendinê ye.</translati
         <location filename="../src/qvrenamedialog.cpp" line="26"/>
         <source>Could not rename %1:
 No write permission or file is read-only.</source>
-        <translation>Nikare %1 ji nû ve bi nav bike:
-Mafdayîna nivîsandinê tune ye an jî pel tenê ji bo xwendinê ye.</translation>
+        <translation>Nikare navê %1 biguherîne:
+Mafdayîna nivîsandinê tune ye yan pel tenê ji bo xwendinê ye.</translation>
     </message>
     <message>
         <location filename="../src/qvrenamedialog.cpp" line="45"/>
         <source>Could not rename %1:
 (Check that all characters are valid)</source>
-        <translation>Nikare %1 ji nû ve bi nav bike:
+        <translation>Nikare navê %1 biguherîne:
 (Kontrol bike ka hemû tîp derbasdar in)</translation>
     </message>
 </context>
@@ -1256,7 +1256,7 @@ Mafdayîna nivîsandinê tune ye an jî pel tenê ji bo xwendinê ye.</translati
     <message>
         <location filename="../src/shortcutmanager.cpp" line="61"/>
         <source>Rename</source>
-        <translation>Ji nû ve bi nav bike</translation>
+        <translation>Navê biguherîne</translation>
     </message>
     <message>
         <location filename="../src/shortcutmanager.cpp" line="65"/>
