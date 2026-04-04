@@ -70,7 +70,7 @@ QVOptionsDialog::QVOptionsDialog(QWidget *parent) : QDialog(parent), ui(new Ui::
 #ifdef Q_OS_MACOS
     ui->menubarCheckbox->hide();
 #else
-    ui->darkTitlebarCheckbox->hide();
+    ui->forceDarkModeCheckbox->hide();
     ui->hideTitlebarCheckbox->hide();
     ui->quitOnLastWindowCheckbox->hide();
 #endif
