@@ -23,6 +23,7 @@ public:
     ~QVOptionsDialog() override;
 
 protected:
+    void changeEvent(QEvent *event) override;
     void done(int r) override;
 
     void modifySetting(QString key, QVariant value);
@@ -45,6 +46,7 @@ protected:
     void updateButtonBox();
     void bgColorButtonClicked();
     void updateBgColorButton();
+    void populateCategories(int selectedRow);
     void populateLanguages();
 
 private slots:
