@@ -12,10 +12,9 @@ Write-Host "Detected Qt version $qtVersion"
 if ($IsWindows) {
     dist/scripts/vcvars.ps1
 } elseif ($IsMacOS) {
-    if (-not $CI -and $qtVersion -lt [version]'6.5.3') {
-        # Workaround for QTBUG-117484
-        sudo xcode-select --switch /Applications/Xcode_14.3.1.app
-    }
+    # By default CMake sets the deployment target for macOS to the build machine's version; set
+    # it explicitly to the version supported by Qt for compatibility with older macOS versions
+    $env:MACOSX_DEPLOYMENT_TARGET = (Select-String -Path (Join-Path $env:QT_ROOT_DIR 'mkspecs/qconfig.pri'), (Join-Path $env:QT_ROOT_DIR 'mkspecs/common/macx.conf') -Pattern '^\s*QMAKE_MACOSX_DEPLOYMENT_TARGET\s*=\s*(.+?)\s*$').Matches[0].Groups[1].Value
 }
 
 # Prepare CMake arguments
@@ -28,8 +27,14 @@ if ($env:nightlyDefines) {
     $cmakeArgs += "-D$($env:nightlyDefines)"
 }
 
-if ($IsMacOS -and $env:buildArch -eq 'Universal') {
-    $cmakeArgs += "-DCMAKE_OSX_ARCHITECTURES=x86_64;arm64"
+if ($IsMacOS) {
+    if ($env:buildArch -eq 'Universal') {
+        $cmakeArgs += "-DCMAKE_OSX_ARCHITECTURES=x86_64;arm64"
+    } elseif ($env:buildArch -eq 'Arm64') {
+        $cmakeArgs += "-DCMAKE_OSX_ARCHITECTURES=arm64"
+    } elseif ($env:buildArch -eq 'X64') {
+        $cmakeArgs += "-DCMAKE_OSX_ARCHITECTURES=x86_64"
+    }
 } elseif ($IsWindows) {
     # Workaround for https://developercommunity.visualstudio.com/t/10664660
     $cmakeArgs += '-DCMAKE_CXX_FLAGS=-D_DISABLE_CONSTEXPR_MUTEX_CONSTRUCTOR'
