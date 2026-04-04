@@ -6,12 +6,18 @@
 #include <QScreen>
 #include <QMessageBox>
 #include <QSettings>
+#include <QKeySequence>
 
 #include <QDebug>
 
 QVOptionsDialog::QVOptionsDialog(QWidget *parent) : QDialog(parent), ui(new Ui::QVOptionsDialog)
 {
     ui->setupUi(this);
+
+    // Set platform-specific modifier text for Ctrl drag checkbox
+    QString ctrlString = QKeySequence(Qt::ControlModifier).toString().remove('+');
+    ui->ctrlDragCheckbox->setText(ui->ctrlDragCheckbox->text().arg(ctrlString));
+    ui->ctrlDragCheckbox->setToolTip(ui->ctrlDragCheckbox->toolTip().arg(ctrlString));
 
     languageRestartMessageShown = false;
 
@@ -60,6 +66,7 @@ QVOptionsDialog::QVOptionsDialog(QWidget *parent) : QDialog(parent), ui(new Ui::
     ui->menubarCheckbox->hide();
 #else
     ui->darkTitlebarCheckbox->hide();
+    ui->hideTitlebarCheckbox->hide();
     ui->quitOnLastWindowCheckbox->hide();
 #endif
 
@@ -159,10 +166,14 @@ void QVOptionsDialog::syncSettings(bool defaults, bool makeConnections)
     // maxwindowresizedperecentage
     syncSpinBox(ui->maxWindowResizeSpinBox, "maxwindowresizedpercentage", defaults,
                 makeConnections);
-    // titlebaralwaysdark
-    syncCheckbox(ui->darkTitlebarCheckbox, "titlebaralwaysdark", defaults, makeConnections);
+    // hidetitlebar
+    syncCheckbox(ui->hideTitlebarCheckbox, "hidetitlebar", defaults, makeConnections);
+    // forcedarkmode
+    syncCheckbox(ui->forceDarkModeCheckbox, "forcedarkmode", defaults, makeConnections);
     // quitonlastwindow
     syncCheckbox(ui->quitOnLastWindowCheckbox, "quitonlastwindow", defaults, makeConnections);
+    // ctrldragwindow
+    syncCheckbox(ui->ctrlDragCheckbox, "ctrldragwindow", defaults, makeConnections);
     // menubarenabled
     syncCheckbox(ui->menubarCheckbox, "menubarenabled", defaults, makeConnections);
     // fullscreendetails
@@ -171,10 +182,7 @@ void QVOptionsDialog::syncSettings(bool defaults, bool makeConnections)
     syncCheckbox(ui->filteringCheckbox, "filteringenabled", defaults, makeConnections);
     // scalingenabled
     syncCheckbox(ui->scalingCheckbox, "scalingenabled", defaults, makeConnections);
-    if (ui->scalingCheckbox->isChecked())
-        ui->scalingTwoCheckbox->setEnabled(true);
-    else
-        ui->scalingTwoCheckbox->setEnabled(false);
+    ui->scalingTwoCheckbox->setEnabled(ui->scalingCheckbox->isChecked());
     // scalingtwoenabled
     syncCheckbox(ui->scalingTwoCheckbox, "scalingtwoenabled", defaults, makeConnections);
     // scalefactor

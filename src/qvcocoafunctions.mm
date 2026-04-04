@@ -131,39 +131,56 @@ void QVCocoaFunctions::setFullSizeContentView(QWindow *window, const bool enable
 #endif
 }
 
-bool QVCocoaFunctions::getTitlebarHidden(const QWidget *window)
+void QVCocoaFunctions::setVibrancy(bool isHidden, bool alwaysDark, QWindow *window)
 {
-#if QT_VERSION >= QT_VERSION_CHECK(6, 9, 0)
-    return window->windowFlags().testFlags(Qt::NoTitleBarBackgroundHint);
-#else
     auto *view = reinterpret_cast<NSView *>(window->winId());
-    return view.window.titleVisibility == NSWindowTitleHidden;
-#endif
-}
 
-void QVCocoaFunctions::setTitlebarHidden(QWidget *window, const bool hide)
-{
-    auto *view = reinterpret_cast<NSView *>(window->winId());
-#if QT_VERSION >= QT_VERSION_CHECK(6, 9, 0)
-    Qt::WindowFlags newFlags = window->windowFlags().setFlag(Qt::NoTitleBarBackgroundHint, hide);
-    window->overrideWindowFlags(newFlags);
-    window->windowHandle()->setFlags(newFlags);
-#else
-    view.window.titlebarAppearsTransparent = hide;
-#endif
-    view.window.titleVisibility = hide ? NSWindowTitleHidden : NSWindowTitleVisible;
-}
-
-void QVCocoaFunctions::setVibrancy(bool alwaysDark, QWindow *window)
-{
-    auto *view = reinterpret_cast<NSView *>(window->winId());
+    if (isHidden) {
+        view.window.titleVisibility = NSWindowTitleHidden;
+        view.window.titlebarAppearsTransparent = true;
+    } else {
+        view.window.titleVisibility = NSWindowTitleVisible;
+        view.window.titlebarAppearsTransparent = false;
+    }
 
     if (alwaysDark) {
-
-        [view.window setAppearance:[NSAppearance appearanceNamed:NSAppearanceNameVibrantDark]];
+        [NSApp setAppearance:[NSAppearance appearanceNamed:NSAppearanceNameVibrantDark]];
     } else {
-        [view.window setAppearance:nil];
+        [NSApp setAppearance:nil];
     }
+}
+
+bool QVCocoaFunctions::startSystemMove(QWidget *widget)
+{
+    if (!widget)
+        return false;
+
+    NSView *view = (NSView *)widget->winId();
+    NSEvent *event = NSApp.currentEvent;
+    if (!view || !view.window || !event)
+        return false;
+
+    [view.window performWindowDragWithEvent:event];
+    return true;
+}
+
+void QVCocoaFunctions::performWindowDrag(QWidget *widget)
+{
+    NSView *view = (NSView *)widget->winId();
+    [view.window performWindowDragWithEvent:[NSApp currentEvent]];
+}
+
+int QVCocoaFunctions::getTitlebarHeight(QWindow *window)
+{
+    if (!window)
+        return 0;
+
+    auto *view = reinterpret_cast<NSView *>(window->winId());
+
+    int visibleHeight = view.window.contentLayoutRect.size.height;
+    int totalHeight = view.window.contentView.frame.size.height;
+
+    return totalHeight - visibleHeight;
 }
 
 int QVCocoaFunctions::getObscuredHeight(QWindow *window)
@@ -176,10 +193,7 @@ int QVCocoaFunctions::getObscuredHeight(QWindow *window)
     if (view.window.titlebarAppearsTransparent)
         return 0;
 
-    int visibleHeight = view.window.contentLayoutRect.size.height;
-    int totalHeight = view.window.contentView.frame.size.height;
-
-    return totalHeight - visibleHeight;
+    return getTitlebarHeight(window);
 }
 
 void QVCocoaFunctions::closeWindow(QWindow *window)

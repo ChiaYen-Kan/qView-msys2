@@ -39,10 +39,6 @@ public:
 
     void updateWindowFilePath();
 
-    bool getTitlebarHidden() const;
-
-    void setTitlebarHidden(const bool hide);
-
     void setWindowSize();
 
     bool getIsPixmapLoaded() const;
@@ -117,8 +113,6 @@ public:
 
     void toggleFullScreen();
 
-    void toggleTitlebarHidden();
-
     int getTitlebarOverlap() const;
 
     const QVImageCore::FileDetails &getCurrentFileDetails() const
@@ -180,7 +174,6 @@ private:
     bool justLaunchedWithImage;
 
     Qt::WindowStates storedWindowState;
-    bool storedTitlebarHidden;
 
     QNetworkAccessManager networkAccessManager;
 

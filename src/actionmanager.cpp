@@ -255,8 +255,6 @@ QMenu *ActionManager::buildViewMenu(bool addIcon, QWidget *parent)
     addCloneOfAction(viewMenu, "mirror");
     addCloneOfAction(viewMenu, "flip");
     viewMenu->addSeparator();
-    if (qvApp->supportsTitlebarHiding())
-        addCloneOfAction(viewMenu, "toggletitlebar");
     addCloneOfAction(viewMenu, "fullscreen");
 
     menuCloneLibrary.insert(viewMenu->menuAction()->data().toString(), viewMenu);
@@ -601,8 +599,6 @@ void ActionManager::actionTriggered(QAction *triggeredAction, MainWindow *releva
         relevantWindow->mirror();
     } else if (key == "flip") {
         relevantWindow->flip();
-    } else if (key == "toggletitlebar") {
-        relevantWindow->toggleTitlebarHidden();
     } else if (key == "fullscreen") {
         relevantWindow->toggleFullScreen();
     } else if (key == "firstfile") {

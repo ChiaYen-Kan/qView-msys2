@@ -26,10 +26,12 @@ static const SettingDefinition settingDefinitions[] = {
     { SettingsManager::Setting::WindowResizeMode, 1, "windowresizemode" },
     { SettingsManager::Setting::MinWindowResizedPercentage, 20, "minwindowresizedpercentage" },
     { SettingsManager::Setting::MaxWindowResizedPercentage, 70, "maxwindowresizedpercentage" },
-    { SettingsManager::Setting::TitleBarAlwaysDark, true, "titlebaralwaysdark" },
+    { SettingsManager::Setting::HideTitlebar, false, "hidetitlebar" },
+    { SettingsManager::Setting::ForceDarkMode, true, "forcedarkmode" },
     { SettingsManager::Setting::QuitOnLastWindow, false, "quitonlastwindow" },
     { SettingsManager::Setting::MenuBarEnabled, false, "menubarenabled" },
     { SettingsManager::Setting::FullScreenDetails, false, "fullscreendetails" },
+    { SettingsManager::Setting::CtrlDragWindow, false, "ctrldragwindow" },
     // Image settings
     { SettingsManager::Setting::FilteringEnabled, true, "filteringenabled" },
     { SettingsManager::Setting::ScalingEnabled, true, "scalingenabled" },

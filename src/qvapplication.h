@@ -85,8 +85,6 @@ public:
 
     ActionManager &getActionManager() { return actionManager; }
 
-    static bool supportsTitlebarHiding();
-
     static qreal getPerceivedBrightness(const QColor &color);
 
 private:

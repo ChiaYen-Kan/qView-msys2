@@ -85,9 +85,9 @@ protected:
 
     void mousePressEvent(QMouseEvent *event) override;
 
-    void mouseReleaseEvent(QMouseEvent *event) override;
-
     void mouseMoveEvent(QMouseEvent *event) override;
+
+    void mouseReleaseEvent(QMouseEvent *event) override;
 
     bool event(QEvent *event) override;
 
@@ -133,7 +133,6 @@ private:
 
     QTimer *expensiveScaleTimerNew;
     QPointF centerPoint;
-
     Qt::MouseButton mousePressButton;
     Qt::KeyboardModifiers mousePressModifiers;
     QPoint mousePressPosition;

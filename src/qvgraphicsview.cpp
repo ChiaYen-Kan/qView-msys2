@@ -2,6 +2,7 @@
 #include "qvapplication.h"
 #include "qvinfodialog.h"
 #include "qvcocoafunctions.h"
+#include "settingsmanager.h"
 #include <QWheelEvent>
 #include <QGraphicsPixmapItem>
 #include <QGraphicsScene>
@@ -38,6 +39,7 @@ QVGraphicsView::QVGraphicsView(QWidget *parent) : QGraphicsView(parent)
     lastScrollRoundingError = QPointF();
     mousePressButton = Qt::MouseButton::NoButton;
     mousePressModifiers = Qt::KeyboardModifier::NoModifier;
+    mousePressPosition = QPoint();
 
     zoomBasisScaleFactor = 1.0;
 
@@ -111,44 +113,85 @@ void QVGraphicsView::enterEvent(QEnterEvent *event)
 
 void QVGraphicsView::mousePressEvent(QMouseEvent *event)
 {
-    const auto initializeDrag = [this, event]() {
+    const auto startWindowMove = [this, event]() {
+#ifdef COCOA_LOADED
+        return QVCocoaFunctions::startSystemMove(window());
+#else
+#if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
+        return window()->windowHandle()->startSystemMove();
+#else
+        Q_UNUSED(event)
+        return false;
+#endif
+#endif
+    };
+
+    const auto startFallbackWindowMove = [this, event]() {
         mousePressButton = event->button();
         mousePressModifiers = event->modifiers();
         mousePressPosition = event->pos();
-        viewport()->setCursor(Qt::ClosedHandCursor);
     };
 
-    if (event->button() == Qt::LeftButton && event->modifiers().testFlag(Qt::ControlModifier)) {
+    // Check for Ctrl/Cmd drag
+    if (event->button() == Qt::LeftButton &&
+        event->modifiers().testFlag(Qt::ControlModifier) &&
+        qvApp->getSettingsManager().getBool(SettingsManager::Setting::CtrlDragWindow)) {
         const auto windowState = window()->windowState();
         if (!windowState.testFlag(Qt::WindowFullScreen)
-            && !windowState.testFlag(Qt::WindowMaximized))
-            initializeDrag();
-        return;
+            && !windowState.testFlag(Qt::WindowMaximized)) {
+            if (!startWindowMove()) {
+                startFallbackWindowMove();
+            }
+            return;
+        }
+    }
+
+    // Check for titlebar region drag
+    if (event->button() == Qt::LeftButton) {
+        const auto windowState = window()->windowState();
+        if (!windowState.testFlag(Qt::WindowFullScreen)
+            && !windowState.testFlag(Qt::WindowMaximized)) {
+#ifdef COCOA_LOADED
+            // Check if click is in titlebar region
+            int titlebarHeight = QVCocoaFunctions::getTitlebarHeight(window()->windowHandle());
+            if (event->pos().y() <= titlebarHeight) {
+                if (!startWindowMove()) {
+                    startFallbackWindowMove();
+                }
+                return;
+            }
+#endif
+        }
     }
 
     QGraphicsView::mousePressEvent(event);
 }
 
-void QVGraphicsView::mouseReleaseEvent(QMouseEvent *event)
-{
-    if (mousePressButton != Qt::NoButton) {
-        mousePressButton = Qt::NoButton;
-        mousePressModifiers = Qt::NoModifier;
-    }
-
-    QGraphicsView::mouseReleaseEvent(event);
-    viewport()->setCursor(Qt::ArrowCursor);
-}
-
 void QVGraphicsView::mouseMoveEvent(QMouseEvent *event)
 {
-    if (mousePressButton == Qt::LeftButton && mousePressModifiers.testFlag(Qt::ControlModifier)) {
+    if (mousePressButton == Qt::LeftButton) {
+        if (mousePressModifiers.testFlag(Qt::ControlModifier)
+            && !event->modifiers().testFlag(Qt::ControlModifier)) {
+            mousePressButton = Qt::NoButton;
+            mousePressModifiers = Qt::NoModifier;
+            QGraphicsView::mouseMoveEvent(event);
+            return;
+        }
+
         const QPoint delta = event->pos() - mousePressPosition;
         window()->move(window()->pos() + delta);
         return;
     }
 
     QGraphicsView::mouseMoveEvent(event);
+}
+
+void QVGraphicsView::mouseReleaseEvent(QMouseEvent *event)
+{
+    mousePressButton = Qt::NoButton;
+    mousePressModifiers = Qt::NoModifier;
+    QGraphicsView::mouseReleaseEvent(event);
+    viewport()->setCursor(Qt::ArrowCursor);
 }
 
 bool QVGraphicsView::event(QEvent *event)

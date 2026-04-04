@@ -22,10 +22,12 @@ public:
         WindowResizeMode,
         MinWindowResizedPercentage,
         MaxWindowResizedPercentage,
-        TitleBarAlwaysDark,
+        HideTitlebar,
+        ForceDarkMode,
         QuitOnLastWindow,
         MenuBarEnabled,
         FullScreenDetails,
+        CtrlDragWindow,
         // Image settings
         FilteringEnabled,
         ScalingEnabled,
